@@ -19,6 +19,7 @@
  */
 
 #include "Calib.hpp"
+#include <fstream>
 
 #include <opencv2/core/eigen.hpp>
 
@@ -27,7 +28,8 @@ namespace eds { namespace calib {
 void CameraInfo::toDSOFormat(const std::string &filename)
 {
     double coeff_sum = 0.00; for (uint i=0; i<D.size(); i++) coeff_sum+=D[i];
-    std::ofstream myfile; myfile.open (filename.c_str());
+    std::ofstream myfile;
+    myfile.open(filename.c_str());
 
     /** Write intrinsics **/
     if ((distortion_model.compare("equidistant") != 0) && (coeff_sum != 0.0))
