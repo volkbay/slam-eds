@@ -23,6 +23,14 @@ for installation instructions outside of Rock. It means this library and
 its dependencies are standard C++ libraries. Therefore you can build your own
 EDS system based on this code which is out of the Rock ecosystem.
 
+Updates on Installation (2023)
+--
+* In addition to dependencies below, [SINTEF/SISL](https://github.com/SINTEF-Geometry/SISL), rice & ruby-dev (for Ruby bindings), [rock/frame_helper](https://github.com/rock-core/perception-frame_helper), and [rock/jpeg_conversion](https://github.com/rock-core/perception-jpeg_conversion) are needed.
+* OpenCV, PCL, yaml-cpp, Ceres and Ruby may be easily installed by Linux packages.
+* One can also try installing SISL from related package repo. But in case of 'compile with -fPIC' error for amd64 systems, it is best to build SISL from its GitHub repo from scratch. While doing this you need to uncomment corresponding line in CMake file.
+* Rice is simply installed by ˋgem install rice -v3.0.0ˋ.
+* Some parts related to boost placeholders are modified in this source code. Please check updated [commit](https://github.com/volkbay/slam-eds/commit/d51f25a205949a6508e40867c27cbf1a503cdcb2). 
+
 Dependencies
 -----------------
 This is an standard C++ library which generates a shared library by default.
